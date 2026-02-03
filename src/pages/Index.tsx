@@ -1,11 +1,34 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import MatrixRain from '@/components/MatrixRain';
+import Magic8Ball from '@/components/Magic8Ball';
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      {/* Matrix Rain Background */}
+      <MatrixRain />
+      
+      {/* Dark overlay for better readability */}
+      <div 
+        className="absolute inset-0 z-[1]"
+        style={{
+          background: 'radial-gradient(ellipse at center, transparent 0%, hsl(120 100% 2% / 0.8) 100%)',
+        }}
+      />
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center gap-4 p-4">
+        {/* Title */}
+        <h1 className="text-2xl md:text-3xl font-bold text-foreground text-glow tracking-wider mb-4">
+          MATRIX 8 BALL
+        </h1>
+
+        {/* Magic 8 Ball */}
+        <Magic8Ball />
+
+        {/* Footer hint */}
+        <p className="mt-8 text-muted-foreground text-xs tracking-wider opacity-60">
+          v1.0 • Despierta, Neo...
+        </p>
       </div>
     </div>
   );
